@@ -17,8 +17,8 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <h1 class="display-4 text-center mb-3">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="display-4 mx-auto mb-3">
                     Weight Converter
                 </h1>
                 <form>
@@ -56,5 +56,15 @@
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById("output").style.visibility = "hidden";
+        document.getElementById("lbs-input").addEventListener('input', function(e) {
+            document.getElementById("output").style.visibility = "visible";
+            let pounds = e.target.value;
+            document.getElementById("grams-output").innerHTML = pounds/0.0022046;
+            document.getElementById("kg-output").innerHTML = pounds/2.2046;
+            document.getElementById("ounces-output").innerHTML = pounds * 16;
+        });
+    </script>
 </body>
 </html>
